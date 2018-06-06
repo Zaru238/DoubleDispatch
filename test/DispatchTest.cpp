@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "../src/DBConnection.hpp"
+#include "../src/QueryExecutor.hpp"
 
 namespace
 {
@@ -7,12 +8,21 @@ namespace
     {
         assert(dynamic_cast<const MySqlDBConnection*>(&connection));
         auto& con = static_cast<const MySqlDBConnection&>(connection);
-        return con.advancedQuery();
+        return con.query();
     }
 
     TEST(ConversionTest, StaticCast)
     {
         MySqlDBConnection connection;
-        ASSERT_EQ(4, getConnectionInfo(connection));
+        ASSERT_EQ(3, getConnectionInfo(connection));
+    }
+
+    TEST(OverloadingTest, DoubleDispatch)
+    {
+        MySqlDBConnection connection;
+        QueryExecutor queryExecutor;
+
+        queryExecutor.executeAdvancedQuery(connection);
+        ASSERT_EQ(4, queryExecutor.executeAdvancedQuery(connection));
     }
 }

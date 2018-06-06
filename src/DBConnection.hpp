@@ -1,6 +1,8 @@
 #ifndef PLAYGROUND_IDBCONNECTION_HPP
 #define PLAYGROUND_IDBCONNECTION_HPP
 
+#include "QueryExecutor.hpp"
+
 class IDBConnection
 {
 public:
@@ -11,7 +13,7 @@ class MySqlDBConnection : public IDBConnection
 {
 public:
 	int query() const override;
-	int advancedQuery() const;
+	int advancedQuery(const QueryExecutor&) const;
 };
 
 #endif //PLAYGROUND_IDBCONNECTION_HPP
