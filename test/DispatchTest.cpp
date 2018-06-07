@@ -11,7 +11,7 @@ namespace
         return con.query();
     }
 
-    TEST(ConversionTest, StaticCast)
+    TEST(TypeConversionTest, Casts)
     {
         MySqlDBConnection connection;
         ASSERT_EQ(3, getConnectionInfo(connection));

@@ -1,5 +1,4 @@
-#ifndef PLAYGROUND_IDBCONNECTION_HPP
-#define PLAYGROUND_IDBCONNECTION_HPP
+#pragma once
 
 #include "QueryExecutor.hpp"
 
@@ -15,5 +14,3 @@ public:
 	int query() const override;
 	int advancedQuery(const QueryExecutor&) const;
 };
-
-#endif //PLAYGROUND_IDBCONNECTION_HPP
