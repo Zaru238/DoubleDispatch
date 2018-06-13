@@ -1,3 +1,11 @@
+sudo: required
+dist: trusty
 language: cpp
 
-script: mkdir build-clang-debug && cd build-clang-debug && cmake .. && make -j$(nproc)
+services:
+  - docker
+
+before_install:
+  - docker build -t DockerBuild -f DockerImage .
+
+script: docker run DockerBuild /bin/bash -c "mkdir build-clang-debug && cd build-clang-debug && cmake .. && make -j$(nproc)"
