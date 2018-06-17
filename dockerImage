@@ -4,7 +4,6 @@ WORKDIR root/project
 
 ADD . $PROJECT_ROOT
 
-
 RUN apt update
 RUN apt install -y wget
 RUN apt install -y g++
@@ -16,5 +15,3 @@ RUN wget https://cmake.org/files/v3.10/cmake-3.10.0.tar.gz && tar -xzf cmake-3.1
 
 RUN apt install -y libgtest-dev
 RUN cd /usr/src/gtest && cmake CMakeLists.txt && make && cp *.a /usr/lib
-
-
