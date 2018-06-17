@@ -2,25 +2,19 @@
 
 #include <string>
 
-struct Info
-{
-    Info() : serverVersion(""), protocolVersion(0) {};
-    ~Info() = default;
-
-    std::string serverVersion;
-    int protocolVersion;
+struct Info {
+    std::string serverVersion{""};
+    int protocolVersion{0};
 };
 
-class IDBConnection
-{
+class IDBConnection {
 public:
     virtual ~IDBConnection() = default;
 
     virtual int query() const = 0;
 };
 
-class MySqlDBConnection : public IDBConnection
-{
+class MySqlDBConnection : public IDBConnection {
 public:
     explicit MySqlDBConnection(std::string serverVersion, int protocolVersion);
 
