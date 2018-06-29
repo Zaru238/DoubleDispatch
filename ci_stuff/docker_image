@@ -5,6 +5,7 @@ WORKDIR root/project
 ADD . $PROJECT_ROOT
 
 RUN apt update
+RUN apt install -y g++
 RUN apt install -y cmake
 
 RUN apt install -y libgtest-dev
