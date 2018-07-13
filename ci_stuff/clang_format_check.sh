@@ -1,5 +1,8 @@
 #!/bin/bash
 
+clang-format -version
+
+
 find -name "*.h" -o -name "*.hpp" -o -name "*.c" -o -name "*.cpp" |
 xargs clang-format -style=file -output-replacements-xml #|
 #grep "<replacement " >/dev/null
