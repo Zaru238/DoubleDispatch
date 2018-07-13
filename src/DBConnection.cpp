@@ -7,7 +7,7 @@ MySqlDBConnection::MySqlDBConnection(std::string serverVersion, int protocolVers
 	info.protocolVersion = protocolVersion;
 }
 
-int MySqlDBConnection::query() const {
+int MySqlDBConnection::query() const     {
 	return info.protocolVersion;
 }
 
