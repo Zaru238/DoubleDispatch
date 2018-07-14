@@ -25,4 +25,4 @@ TEST(ConnectionInfoTest, GetAdvancedInfo) {
   ASSERT_EQ("5.5.8 MySQL Community Server (GPL)",
             getConnectionAdvancedInfo(connection));
 }
-}
+}  // namespace
