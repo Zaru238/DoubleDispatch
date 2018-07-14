@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Morheit/DoubleDispatch.svg?branch=master)](https://travis-ci.org/Morheit/DoubleDispatch)
+
 # DoubleDispatch #
 
 Example of use "Double Dispatch" pattern to avoid `static_cast` restrictions
