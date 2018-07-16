@@ -12,7 +12,7 @@ RUN apt install -y clang-format-6.0
 RUN apt install -y git
 
 RUN git clone git://github.com/google/googletest
-RUN mkdir googletest/build & cd googletest/build & cmake .. & make & make install
+RUN mkdir googletest/build & cd googletest/build & cmake .. -DBUILD_GTEST=ON & make & make install
 
 #RUN apt install -y libgtest-dev
 #RUN cd /usr/src/gtest && cmake CMakeLists.txt && make && cp *.a /usr/lib
