@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 WORKDIR root/project
-THIRD_PARTY_DIR root/third_party
+#THIRD_PARTY_DIR root/third_party
 
 ADD . $PROJECT_ROOT
 
