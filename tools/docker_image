@@ -12,4 +12,4 @@ RUN apt install -y clang-format-6.0
 
 RUN apt install -y git
 
-RUN "mkdir third_party & cd third_party  & git clone git://github.com/google/googletest" # & mkdir googletest/build & cd googletest/build & cmake ..  & make & make install
+RUN "mkdir third_party && cd third_party && git clone git://github.com/google/googletest" # & mkdir googletest/build & cd googletest/build & cmake ..  & make & make install
