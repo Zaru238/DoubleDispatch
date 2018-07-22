@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 WORKDIR root/project
-#THIRD_PARTY_DIR root/third_party
+ARG THIRD_PARTY_DIR root/third_party
 
 ADD . $PROJECT_ROOT
 
@@ -12,5 +12,5 @@ RUN apt install -y clang-format-6.0
 
 RUN apt install -y git
 
-RUN cd / && mkdir third_party && cd third_party && pwd && git clone git://github.com/google/googletest && \
+RUN cd ${THIRD_PARTY_DIR} && mkdir third_party && cd third_party && pwd && git clone git://github.com/google/googletest && \
   mkdir googletest/build && cd googletest/build && cmake ..  && make && make install
